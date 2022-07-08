@@ -46,7 +46,7 @@ jobs:
       - name: Build and Export to Docker
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./bullseye
           load: true
           tags: ${{ env.TEST_TAG }}
 
@@ -58,7 +58,7 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./bullseye
           platforms: ${{ env.PLATFORMS }}
           tags: |
             ${{ env.VERS_TAG }}
@@ -100,7 +100,7 @@ jobs:
       - name: Build and Export to Docker
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./bullseye-slim
           load: true
           tags: ${{ env.TEST_TAG }}
 
@@ -112,7 +112,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./bullseye-slim
           platforms: ${{ env.PLATFORMS }}
           push: true
           tags: |
